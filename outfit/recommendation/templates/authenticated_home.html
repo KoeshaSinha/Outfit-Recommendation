@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% load static %} {% block title %} Home - Glamify 365
+{% endblock %} {% block content %}
+
+<!-- Banner Start -->
+<div class="container-fluid p-0 mb-5 wow fadeIn">
+    <div
+        id="header-banner"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+    >
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img
+                    class="w-100"
+                    style="opacity: 0.8"
+                    src="{% static 'img/bg1.jpg' %}"
+                    alt="Image"
+                />
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="row">
+                                <p
+                                    class="d-inline-block border border-white rounded text-primary fw-semi-bold py-1 px-3 animated slideInDown"
+                                >
+                                    Welcome {{ username }}
+                                </p>
+
+                                <div class="row my-5">
+                                    <a class="col-6 card p-2" href="/upload">
+                                        <img
+                                            class="rounded"
+                                            height="250px"
+                                            src="https://picsum.photos/id/237/200/300"
+                                        />
+                                        <h6 class="p-2">NORMAL BODY OUTFITS</h6>
+                                    </a>
+                                    <a class="col-6 card p-2" href="/upload2">
+                                        <img
+                                            class="rounded"
+                                            height="250px"
+                                            src="https://picsum.photos/id/236/200/300"
+                                        />
+                                        <h6 class="p-2">ALL BODY OUTFITS</h6>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner End -->
+
+{% endblock %}

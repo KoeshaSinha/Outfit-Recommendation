@@ -1,0 +1,157 @@
+{% extends "base.html" %} {% load static %} {% block title %} About - Glamify
+365 {% endblock %} {% block content %}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container">
+        <h1 class="display-3 mb-4 animated slideInDown">About</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    About
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- About Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-4 align-items-start mb-4">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <img
+                    class="img-fluid rounded"
+                    src="{% static 'img/aboutt.avif' %}"
+                />
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                <h1 class="display-5 mb-4">Stuck on what to wear ?</h1>
+                <p class="mb-4">
+                    Welcome to Glamify 365, your go-to platform for personalized
+                    outfit recommendations! Our mission is to make the process
+                    of choosing the perfect outfit for any occasion a breeze.
+                </p>
+                <div class="border rounded p-4">
+                    <nav>
+                        <div
+                            class="nav nav-tabs mb-3"
+                            id="nav-tab"
+                            role="tablist"
+                        >
+                            <button
+                                class="nav-link fw-semi-bold active"
+                                id="nav-story-tab"
+                                data-bs-toggle="tab"
+                                data-bs-target="#nav-story"
+                                type="button"
+                                role="tab"
+                                aria-controls="nav-story"
+                                aria-selected="true"
+                            >
+                                How It Works?
+                            </button>
+                            <button
+                                class="nav-link fw-semi-bold"
+                                id="nav-mission-tab"
+                                data-bs-toggle="tab"
+                                data-bs-target="#nav-mission"
+                                type="button"
+                                role="tab"
+                                aria-controls="nav-mission"
+                                aria-selected="false"
+                            >
+                                Contact Us
+                            </button>
+                            <button
+                                class="nav-link fw-semi-bold"
+                                id="nav-vision-tab"
+                                data-bs-toggle="tab"
+                                data-bs-target="#nav-vision"
+                                type="button"
+                                role="tab"
+                                aria-controls="nav-vision"
+                                aria-selected="false"
+                            >
+                                Our Vision
+                            </button>
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div
+                            class="tab-pane fade show active"
+                            id="nav-story"
+                            role="tabpanel"
+                            aria-labelledby="nav-story-tab"
+                        >
+                            <p>
+                                At Glamify 365, we understand that everyone's
+                                style is unique. Our recommendation system
+                                analyzes the compatibility of different outfit
+                                combinations based on various factors, providing
+                                you with a compatibility score for each set of
+                                outfits.
+                            </p>
+                            <p class="mb-0">Here's how it works:</p>
+                            <p>
+                                <i class="fa fa-check text-primary me-3"></i
+                                >Upload images of the outfits you're
+                                considering.
+                            </p>
+                            <p>
+                                <i class="fa fa-check text-primary me-3"></i>Our
+                                advanced compatibility algorithm evaluates the
+                                harmony of colors, styles, and patterns.
+                            </p>
+                            <p>
+                                <i class="fa fa-check text-primary me-3"></i
+                                >Receive a compatibility score for each outfit
+                                combination.
+                            </p>
+                            <p>
+                                <i class="fa fa-check text-primary me-3"></i
+                                >Make an informed decision and step out with
+                                confidence in your perfectly curated outfit!
+                            </p>
+                        </div>
+                        <div
+                            class="tab-pane fade"
+                            id="nav-mission"
+                            role="tabpanel"
+                            aria-labelledby="nav-mission-tab"
+                        >
+                            <p>
+                                Have questions or suggestions? We'd love to hear
+                                from you! Contact our team at
+                                <a href="mailto:glamify365@gmail.com"
+                                    >glamify365@gmail.com</a
+                                >.
+                            </p>
+                        </div>
+                        <div
+                            class="tab-pane fade"
+                            id="nav-vision"
+                            role="tabpanel"
+                            aria-labelledby="nav-vision-tab"
+                        >
+                            <p>
+                                Glamify 365 envisions a world where everyone can
+                                effortlessly express their unique style without
+                                the stress of deciding what to wear. We believe
+                                that feeling confident in your outfit enhances
+                                your overall experience and boosts your
+                                self-esteem.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+{% endblock %}

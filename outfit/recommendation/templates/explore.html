@@ -1,0 +1,92 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %} Explore More - Glamify 365 {% endblock %} 
+{% block content %}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-head mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container">
+        <h1 class="display-3 mb-4 animated slideInDown">Fashion Trends</h1>
+
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    Recent Fashion Trends
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Trends Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-4 align-items-start mb-4">
+            <!-- Trend 1: Boho Chic Revival -->
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <img
+                    class="img-fluid rounded"
+                    src="{% static 'img/bohoo.jpg' %}"
+                    alt="Boho Chic Revival"
+                />
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                <h1 class="display-5 mb-4">1. Boho Chic Revival</h1>
+                <div class="border rounded p-4">
+                    <p>
+                        Embrace the free-spirited Boho Chic style with flowing dresses, floral patterns, and eclectic accessories.
+                    </p>
+                    <p>
+                        This trend is all about expressing your unique personality through a mix of vibrant colors and unconventional accessories. Opt for loose, flowy garments and don't be afraid to layer with bold, statement pieces.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Trend 2: Sustainable Fashion -->
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <img
+                    class="img-fluid rounded"
+                    src="{% static 'img/sustainable.jpg' %}"
+                    alt="Sustainable Fashion"
+                />
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                <h1 class="display-5 mb-4">2. Sustainable Fashion</h1>
+                <div class="border rounded p-4">
+                    <p>
+                        Join the movement towards sustainability with eco-friendly fabrics and conscious fashion choices.
+                    </p>
+                    <p>
+                        Sustainable fashion is not just a trend; it's a lifestyle. Choose clothing made from organic materials, support ethical fashion brands, and make mindful choices to reduce your environmental impact.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Trend 3: Power Blazers -->
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <img
+                    class="img-fluid rounded"
+                    src="{% static 'img/power_blazers.jpeg' %}"
+                    alt="Power Blazers"
+                />
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                <h1 class="display-5 mb-4">3. Power Blazers</h1>
+                <div class="border rounded p-4">
+                    <p>
+                        Make a statement with power blazers, combining sophistication with a touch of boldness for a strong, confident look.
+                    </p>
+                    <p>
+                        Elevate your style with power blazers that exude confidence. Pair them with tailored pants or a skirt for a professional yet fashionable ensemble. The key is to choose bold colors and sharp cuts to make a lasting impression.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Trends End -->
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% load static %} {% block title %} Upload Outfit
+Images {% endblock %} {% block content %}
+
+<div style="height: 95px"></div>
+<main class="container mt-5 mb-5">
+    <div class="card p-5">
+        <h2 class="card-title">Upload Outfit Images</h2>
+        <div class="card-body">
+            <form
+                method="POST"
+                action="{% url 'upload_view' %}"
+                enctype="multipart/form-data"
+            >
+                {% csrf_token %}
+                
+                {% for field in form %}
+                <div class="form-group my-3">{{ field.label_tag }} {{ field }}</div>
+                {% endfor %} 
+                
+                <!-- {{ form.as_p }} -->
+
+                <input class="btn btn-primary" type="submit" value="Upload" />
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

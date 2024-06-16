@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Upload Outfit Images {% endblock %}
+{% block content %}
+
+<div style="height: 95px"></div>
+<!-- ... (your existing code) ... -->
+
+<main class="container card mt-5 mb-5 p-5">
+    <center><h1>Here is the Compatibility Score of your Outfit!</h1></center>
+    <!-- Chart.js canvas for compatibility and incompatibility scores -->
+
+    <center><canvas id="compatibilityChart" class="card mt-3" width="300" height="300"></canvas></center>
+
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Get the compatibility and incompatibility scores from the server-side variables
+        var compatibilityScore = {{ compatibility_score_predictions }};
+        var incompatibilityScore = {{ incompatibility_score_predictions }};
+
+        // Get the canvas element
+        var ctx = document.getElementById('compatibilityChart').getContext('2d');
+
+        // Create a pie chart using Chart.js
+        var chart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Compatibility', 'Incompatibility'],
+                datasets: [{
+                    data: [compatibilityScore, incompatibilityScore],
+                    backgroundColor: ['#40E0D0', ' #00008B']
+                }]
+            },
+            options: {
+                responsive: false, // Set to false to disable responsiveness
+                maintainAspectRatio: false, // Set to false to disable aspect ratio scaling
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                }
+            }
+        });
+
+        var centerDiv = document.createElement('div');
+    centerDiv.classList.add('text-center');
+
+    if (compatibilityScore < 0.50) {
+        centerDiv.innerHTML = '<p class="mt-3 mb-3" style="color: #FF6347; font-size: 25px; font-weight: semi-bold;">OOPs, this will not look good on you. Try something else!  😟 </p>';
+    } else {
+        centerDiv.innerHTML = '<p class="mt-3 mb-3" style="color: #008000; font-size: 25px;font-weight: semi-bold;">Wow!!! It looks amazing!!! Go for it 😃</p>';
+    }
+
+    // Append the centered div to the body
+    document.querySelector('main').appendChild(centerDiv);
+
+   
+    </script>
+ 
+    <center> <h1 class="my-2">Your Outfit</h1> </center>
+    <div class="outfit-cluster" style="display: flex; flex-wrap: wrap; justify-content: space-between; border: 2px solid #ddd; padding: 10px; border-radius: 10px; max-width: 600px; margin: 0 auto;">
+        <div class="outfit-image" style="width: 30%; margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+            <img src="{{top_url}}" alt="Top Image" style="width: 100%; height: auto; object-fit: cover;" class="img-fluid rounded" />
+        </div>
+        <div class="outfit-image" style="width: 30%; margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+            <img src="{{bottom_url}}" alt="Bottom Image" style="width: 100%; height: auto; object-fit: cover;" class="img-fluid rounded" />
+        </div>
+        <div class="outfit-image" style="width: 30%; margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+            <img src="{{ shoes_url }}" alt="Shoes Image" style="width: 100%; height: auto; object-fit: cover;" class="img-fluid rounded" />
+        </div>
+        <div class="outfit-image" style="width: 48%; margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+            <img src="{{ outerwear_url }}" alt="Outerwear Image" style="width: 100%; height: auto; object-fit: cover;" class="img-fluid rounded" />
+        </div>
+        <div class="outfit-image" style="width: 48%; margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+            <img src="{{ purse_url }}" alt="Purse Image" style="width: 100%; height: auto; object-fit: cover;" class="img-fluid rounded" />
+        </div>
+    </div>
+    <!--div class="text-center mt-3">
+    <button class="btn btn-primary" style="font-weight: semi-bold; color: white;">Want to see your previous outfit choices?</button>
+    </div-->
+
+    <div class="text-center mt-3">
+        <a href="{% url 'previous_outfits' %}" class="btn btn-primary" style="font-weight: semi-bold; color: white;">Want to see your previous outfit choices?</a>
+    </div>
+<!-- Additional button for "Want some Style Tips?" -->
+<a href="/tips">
+    <div class="text-center mt-3">
+        <button class="btn btn-primary" style="font-weight: semi-bold; color: white;">Want some Style Tips?</button>
+    </div>
+</a>
+</main>
+
+{% endblock %}
+

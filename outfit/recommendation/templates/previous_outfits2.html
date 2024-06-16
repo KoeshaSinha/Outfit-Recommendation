@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Previous Outfit Choices {% endblock %}
+{% block content %}
+
+
+<div style="height: 95px; width: 600px;"></div>
+<main class="container mt-5 mb-5">
+    <div class="card p-5">
+        <div class="bbox" style="display: flex; flex-wrap: wrap; justify-content: space-between; border: 2px solid #ddd; padding: 10px; border-radius: 10px; max-width: 600px; margin: 0 auto;">
+        <h2 class="card-title text-center mb-3">Your Previous Outfit Choices</h2>
+        </div>
+       
+
+        <div class="outfit-container">
+        <!--div class="outfit-container" style="display: flex; flex-wrap: wrap; justify-content: flex-start;"-->
+            {% for outfit in outfits %}
+
+                <h3 class="text-center mt-3">Overall Compatibility Score: {{ outfit.Compatibility_Score }}</h3>
+                <div class="outfit-cluster" style="display: flex; flex-wrap: wrap; justify-content: space-between; border: 2px solid #ddd; padding: 10px; border-radius: 10px; max-width: 600px; margin: 0 auto;">
+               
+                <div class="outfit-image" style="width: 40%; margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+                    <img src="{{ outfit.Dress.url }}" alt="Dress Image" style="width: 100%; height: auto; object-fit: cover;" class="img-fluid rounded" />
+                </div>
+
+
+                <div class="outfit-image" style="width: 40%; margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+                    <img src="{{ outfit.Shoes.url }}" alt="Shoes Image" style="width: 100%; height: auto; object-fit: cover;" class="img-fluid rounded" />
+                </div>
+
+                <div class="outfit-image" style="width: 30%; margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+                    <img src="{{ outfit.Outerwear.url }}" alt="Outerwear Image" style="width: 100%; height: auto; object-fit: cover;" class="img-fluid rounded" />
+                </div>
+
+                <div class="outfit-image" style="width: 30%; margin-bottom: 10px; border-radius: 10px; overflow: hidden;">
+                    <img src="{{ outfit.Purse.url }}" alt="Purse Image" style="width: 100%; height: auto; object-fit: cover;" class="img-fluid rounded" />
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+
+{% endblock %}

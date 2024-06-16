@@ -1,0 +1,183 @@
+{% load static %}
+{% extends "base.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glamify 365</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url("{% static 'images/bg1.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        header {
+            background-color: #fff;
+            color: #333;
+            padding: 1em;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin: 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        nav div button {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 18px;
+        padding: 10px 20px;
+        background-color: #333;
+        border: none;
+        cursor: pointer;
+    }
+
+    nav div button:hover {
+        background-color: #555;
+    }
+
+
+        section {
+            padding: 2em;
+            text-align: center;
+        }
+
+        section img {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+       
+
+
+.dropdown-content a {
+    color: black;
+    font-size: 16px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Glamify 365</h1>
+        <p>Welcome to our website.</br> Explore, discover and become a fashion icon!</p>
+    </header>
+
+        <nav>
+        <a href='/'> HOME </a> |
+        <a href='aboutus'> ABOUT US </a> |
+        <a href='signup'> SIGN UP </a> |
+        <a href='login'> LOGIN </a> |
+        <div class="dropdown" id="dropdownMenu">
+            <button onclick="showDropdown()">UPLOAD IMAGES</button>
+            <div class="dropdown-content">
+                <a href="upload">NORMAL BODY OUTFITS</a>
+                <a href="upload2">ALL BODY OUTFITS</a>
+            </div>
+        </div>
+        | <a href='Tips'> TIPS </a>
+    </nav>
+
+    <script>
+        function showDropdown() {
+            document.getElementById("dropdownMenu").classList.toggle("show");
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropdown')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+
+    <section>
+        <img src="{% static 'images/i1.png' %}">
+        <img src="{% static 'images/i2.png' %}">
+        <img src="{% static 'images/i3.png' %}">
+        <img src="{% static 'images/i4.png' %}">
+        <h2>Our Services</h2>
+        <p>This is a Fashion website</p>
+        <p>Explore our range of services and discover how we can help you.</p>
+        <a href="#">Learn More</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Glamify 365. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
